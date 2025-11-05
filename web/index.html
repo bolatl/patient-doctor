@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Мини-платформа «Пациент-Врач»</title>
+  <style>
+    :root { --gap: 16px; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; padding: 40px 20px;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: #f7f7f9;
+      color: #111;
+    }
+    .wrap { max-width: 960px; margin: 0 auto; }
+    h1 { margin: 0 0 10px 0; font-size: 28px; }
+    p.lead { margin: 0 0 28px 0; color: #555; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: var(--gap);
+    }
+    .card {
+      background: #fff; border: 1px solid #e6e6ea; border-radius: 16px;
+      padding: 22px; box-shadow: 0 1px 2px rgba(0,0,0,.04);
+      display: flex; flex-direction: column; justify-content: space-between;
+      min-height: 190px;
+      transition: transform .08s ease, box-shadow .08s ease, border-color .08s ease;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,.08);
+      border-color: #dcdce2;
+    }
+    .title { font-size: 20px; margin-bottom: 8px; }
+    .muted { color: #6a6a73; font-size: 14px; }
+    .actions { margin-top: 18px; display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn {
+      text-decoration: none; display: inline-block; padding: 10px 14px;
+      border-radius: 10px; border: 1px solid #d1d1d8; background: #fff; color: #111;
+      font-weight: 600; cursor: pointer;
+    }
+    .btn.primary { background: #111; color: #fff; border-color: #111; }
+    .footer { margin-top: 28px; color: #7a7a85; font-size: 13px; }
+    .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background:#f0f0f5; border:1px solid #e0e0e6; border-radius:6px; padding:2px 6px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Мини-платформа «Пациент-Врач»</h1>
+    <p class="lead">Выберите роль, чтобы перейти к авторизации.</p>
+
+    <div class="grid">
+      <div class="card">
+        <div>
+          <div class="title">Пациент</div>
+          <div class="muted">Просмотр своих данных, выбор врача по ID. После выбора информация о враче будет видна здесь и в кабинете врача.</div>
+        </div>
+        <div class="actions">
+          <a class="btn primary" href="patient.html">Перейти в кабинет пациента</a>
+          <span class="muted">Тест: <span class="kbd">peter/1234</span> или <span class="kbd">aliya/1234</span></span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div>
+          <div class="title">Врач</div>
+          <div class="muted">Просмотр своей информации и списка пациентов, выбравших этого врача. Список обновляется в реальном времени (SSE).</div>
+        </div>
+        <div class="actions">
+          <a class="btn primary" href="doctor.html">Перейти в кабинет врача</a>
+          <span class="muted">Тест: <span class="kbd">cardio/1234</span> (ID 101) или <span class="kbd">neuro/1234</span> (ID 102)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      Запуск: открыть <span class="kbd">http://localhost:8080/</span>. Данные для входа заданы в <span class="kbd">data/seed.json</span>.
+    </div>
+  </div>
+</body>
+</html>

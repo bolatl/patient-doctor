@@ -1,0 +1,10 @@
+{
+    "patients": [
+      { "id": 1, "login": "peter", "password": "1234", "name": "Пётр Иванов" },
+      { "id": 2, "login": "aliya", "password": "1234", "name": "Алия Серикова" }
+    ],
+    "doctors": [
+      { "id": 101, "login": "cardio", "password": "1234", "first_name": "Сауле", "last_name": "Тлеуова", "middle_name": "Ерлановна", "speciality": "Кардиолог" },
+      { "id": 102, "login": "neuro",  "password": "1234", "first_name": "Дамир", "last_name": "Садыков", "middle_name": "Маратович", "speciality": "Невролог" }
+    ]
+  }  
